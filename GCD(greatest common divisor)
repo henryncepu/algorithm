@@ -4,6 +4,7 @@ def gcd(m,n):
         return m
     else:
         return gcd(n,m%n)# 递归
+********有test的时候到这就够了，不需要去管什么print了
 m,n=68,34
 
 print(gcd(m,n))
