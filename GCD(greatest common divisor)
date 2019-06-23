@@ -1,3 +1,4 @@
+#递归求最大公约数
 def gcd(m,n):
     if n ==0:
         return m
@@ -7,6 +8,7 @@ m,n=68,34
 
 print(gcd(m,n))
 
+#找最小值并用此值循环求最大公约数
 def gcd_loop(m,n):
     if m > n :
         small = n
@@ -17,3 +19,19 @@ def gcd_loop(m,n):
             gcd = i
     return gcd
 print(gcd_loop(20,34),'loop')
+
+#Euclidean Algorithum 辗转相除法 求最大公约数
+def egcd(m,n):
+    while n:
+        m,n =n,m%n
+    return m
+print(egcd(20,34))
+
+欧氏距离定义： 欧氏距离（ Euclidean distance）是一个通常采用的距离定义，它是在m维空间中两个点之间的真实距离。
+
+在二维和三维空间中的欧式距离的就是两点之间的距离，二维的公式是 
+d = sqrt((x1-x2)^+(y1-y2)^) 
+三维的公式是 
+d=sqrt(x1-x2)^+(y1-y2)^+(z1-z2)^) 
+推广到n维空间，欧式距离的公式是 
+d=sqrt( ∑(xi1-xi2)^ ) 这里i=1,2..n 
