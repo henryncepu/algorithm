@@ -1,0 +1,19 @@
+def gcd(m,n):
+    if n ==0:
+        return m
+    else:
+        return gcd(n,m%n)# 递归
+m,n=68,34
+
+print(gcd(m,n))
+
+def gcd_loop(m,n):
+    if m > n :
+        small = n
+    else:
+        small = m
+    for i in range(1,small+1):#  先找出两个输入值之间最小的数，并在1到这个最小数之间找除数，用两个数对除数求余，当两个的余数都为0 ，即i为最大公约数
+        if m%i==0 and n%i==0:
+            gcd = i
+    return gcd
+print(gcd_loop(20,34),'loop')
